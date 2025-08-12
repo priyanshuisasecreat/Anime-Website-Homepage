@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Anime Website Homepage - @Adarsh-devx</title>
+
+    <link rel="stylesheet" href="./output.css" />
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="icon" type="image/png" href="images/favicon-32x32.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        background-color: #1a1a2e;
+      }
+
+      .navbar-gradient {
+        background-color: rgba(26, 26, 46, 0.5);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      .search {
+        position: relative;
+      }
+      .search .input {
+        background-color: rgba(255, 255, 255, 0.1);
+        border: 1px solid #e91e63;
+        border-radius: 20px;
+        padding: 8px 15px;
+        color: white;
+        width: 160px;
+        transition: all 0.3s ease;
+        font-size: 0.9rem;
+      }
+      .search .input:focus {
+        outline: none;
+        width: 200px;
+        background-color: rgba(255, 255, 255, 0.2);
+      }
+      .search .input::placeholder {
+        color: rgba(255, 255, 255, 0.7);
+      }
+      .search label {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        border: 0;
+      }
+
+      .background-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        background-image: url("https://i.pinimg.com/736x/c2/c6/b5/c2c6b5db3810edaed961cdf3c8d28596.jpg");
+        background-size: cover;
+        background-position: center;
+        filter: blur(4px) brightness(0.7);
+        transform: scale(1.1);
+      }
+      .form-container {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+      }
+      .input-field:focus {
+        box-shadow: 0 0 0 2px rgba(192, 132, 252, 0.5);
+        border-color: #a855f7;
+      }
+      .login-btn {
+        transition: all 0.3s ease;
+      }
+      .login-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 20px rgba(168, 85, 247, 0.4);
+      }
+      @keyframes float {
+        0% {
+          transform: translateY(0px) rotate(0deg);
+          opacity: 1;
+        }
+        100% {
+          transform: translateY(-1000px) rotate(720deg);
+          opacity: 0;
+        }
+      }
+      .particles {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        pointer-events: none;
+        z-index: -1;
+      }
+      .particle {
+        position: absolute;
+        bottom: -200px;
+        background: rgba(255, 255, 255, 0.15);
+        border-radius: 50%;
+        animation: float linear infinite;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-900 text-gray-200">
+    <div class="background-container"></div>
+    <div class="particles"></div>
+
+    <nav class="navbar-gradient shadow-lg p-4 sticky top-0 z-50">
+      <div
+        class="container mx-auto flex justify-between items-center flex-wrap"
+      >
+        <a href="#" class="text-2xl font-bold text-pink-400 tracking-wider"
+          >anime.com</a
+        >
+        <div class="md:hidden">
+          <button
+            id="mobile-menu-button"
+            class="text-white"
+            aria-label="Open navigation menu"
+          >
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16m-7 6h7"
+              ></path>
+            </svg>
+          </button>
+        </div>
+        <div
+          class="hidden w-full md:flex md:w-auto md:items-center md:space-x-8 mt-4 md:mt-0"
+          id="nav-links"
+        >
+          <a
+            href="#"
+            class="block text-gray-200 hover:text-pink-400 transition duration-300 py-2 md:py-0"
+            >Latest</a
+          >
+          <a
+            href="#"
+            class="block text-gray-200 hover:text-pink-400 transition duration-300 py-2 md:py-0"
+            >My Account</a
+          >
+          <a
+            href="#"
+            class="block text-gray-200 hover:text-pink-400 transition duration-300 py-2 md:py-0"
+            >Contact Us</a
+          >
+          <div class="search mt-4 md:mt-0">
+            <form>
+              <label for="search">Search</label>
+              <input
+                required=""
+                placeholder="Search..."
+                pattern=".*\S.*"
+                type="search"
+                class="input"
+                id="search"
+              />
+            </form>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <main class="flex items-center justify-center p-4 pt-16 md:pt-24">
+      <div
+        class="bg-gray-900/50 form-container w-full max-w-md p-8 space-y-8 rounded-2xl shadow-2xl"
+      >
+        <div class="text-center">
+          <h1 class="text-3xl md:text-4xl font-bold text-white tracking-wider">
+            Welcome Back!
+          </h1>
+          <p class="text-purple-500 mt-2">
+            Enter your credentials to enter the world of anime.
+          </p>
+        </div>
+        <form class="space-y-6">
+          <div>
+            <label for="email" class="text-sm font-medium text-purple-200"
+              >Email Address</label
+            >
+            <input
+              type="email"
+              id="email"
+              name="email"
+              class="input-field mt-1 block w-full bg-white/10 border border-purple-400/30 rounded-lg shadow-sm py-3 px-4 text-white placeholder-gray-400 focus:outline-none focus:ring-purple-500 focus:border-purple-500"
+              placeholder="you@example.com"
+              required
+            />
+          </div>
+          <div>
+            <label for="password" class="text-sm font-medium text-purple-200"
+              >Password</label
+            >
+            <input
+              type="password"
+              id="password"
+              name="password"
+              class="input-field mt-1 block w-full bg-white/10 border border-purple-400/30 rounded-lg shadow-sm py-3 px-4 text-white placeholder-gray-400 focus:outline-none focus:ring-purple-500 focus:border-purple-500"
+              placeholder="••••••••"
+              required
+            />
+          </div>
+          <div class="flex items-center justify-between text-sm">
+            <div class="flex items-center">
+              <input
+                id="remember-me"
+                name="remember-me"
+                type="checkbox"
+                class="h-4 w-4 text-purple-600 bg-gray-700 border-gray-600 rounded focus:ring-purple-500"
+              />
+              <label for="remember-me" class="ml-2 block text-purple-200"
+                >Remember me</label
+              >
+            </div>
+            <a
+              href="#"
+              class="font-medium text-purple-400 hover:text-purple-300"
+              >Forgot password?</a
+            >
+          </div>
+          <div>
+            <button
+              type="submit"
+              class="login-btn w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-lg text-sm font-bold text-white bg-purple-600 hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500 focus:ring-offset-gray-900"
+            >
+              LOGIN
+            </button>
+          </div>
+        </form>
+        <p class="text-sm text-center text-gray-300">
+          Not a member?
+          <a href="#" class="font-medium text-purple-400 hover:text-purple-300"
+            >Sign up now</a
+          >
+        </p>
+      </div>
+    </main>
+
+    <section id="bio-section" class="container mx-auto p-4 md:p-8 text-white">
+      <div
+        class="bg-gray-900/50 backdrop-blur-sm border border-purple-500/20 rounded-2xl p-6 md:p-8 shadow-2xl flex flex-col md:flex-row items-center gap-8"
+      >
+        <div class="md:w-1/3 w-full flex-shrink-0">
+          <img
+            src="https://i.pinimg.com/736x/81/c7/9c/81c79cb8cfcb320fb7890403fc9bc81d.jpg"
+            alt="Tanjiro and Nezuko from Demon Slayer"
+            class="rounded-lg shadow-lg w-full h-100 object-cover"
+            onerror="this.onerror=null;this.src='https://placehold.co/600x400/1a1a2e/ffffff?text=Demon+Slayer';"
+          />
+        </div>
+
+        <div class="md:w-2/3 w-full">
+          <h2 class="text-3xl font-bold text-pink-400 mb-4">
+            Featured: Demon Slayer
+          </h2>
+          <p class="text-gray-300 mb-4 leading-relaxed">
+            It's Taisho-era Japan. Tanjiro Kamado is a kindhearted boy whose
+            peaceful life is shattered when a demon slaughters his family. The
+            only survivor is his younger sister, Nezuko, who has been turned
+            into a demon herself.
+          </p>
+          <p class="text-gray-300 mb-6 leading-relaxed">
+            Vowing to find a cure and avenge his family, Tanjiro joins the Demon
+            Slayer Corps, embarking on a perilous journey to hunt down demons
+            and protect humanity, all while carrying his sister on his back.
+          </p>
+          <a
+            href="#"
+            class="login-btn inline-block py-3 px-6 border border-transparent rounded-lg shadow-lg text-sm font-bold text-white bg-purple-600 hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500 focus:ring-offset-gray-900"
+          >
+            Watch Now
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <footer class="navbar-gradient py-8">
+      <div class="container mx-auto text-center text-gray-300">
+        <p>&copy; 2025 anime.com. All Rights Reserved.</p>
+      </div>
+      <div>
+        <a href="#"
+          >Creator - <span class="hover:text-pink-400">Adarsh-devx</span>
+        </a>
+      </div>
+    </footer>
+
+    
+  </body>
+</html>
